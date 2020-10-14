@@ -1,6 +1,6 @@
 const RoutesService = {
   getAllItems(knex, db) {
-    return knex.select('*').from(db);
+    return knex.from(db).select('*');
   },
   insertItem(knex, db, newItem) {
     return knex
