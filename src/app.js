@@ -7,6 +7,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { NODE_ENV, CLIENT_ORIGIN } = require('./config');
 const reviewsRouter = require('./route/reviews-router');
+const commemntsRouter = require('./route/comments-router');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/reviews', reviewsRouter);
+app.use('/comments', commemntsRouter);
 
 function errorHandler(error, req, res, next) {
   let response;

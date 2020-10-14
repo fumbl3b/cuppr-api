@@ -21,14 +21,9 @@ const RoutesService = {
   getCommentsForItem(knex, tableName, id) {
     return knex
       .from(`${tableName} AS comm`)
-      .select(
-        'comm.id',
-        'comm.author_id',
-        'comm.review_id',
-        'comm.posted_on',
-        'comm.body'
-      ).where('comm.review_id', id);
-  }
+      .select('*')
+      .where('comm.review_id', id);
+  },
   //updateItem(knex, db, newItem) {},
   //deleteItem(knex, db, id) {}
 };

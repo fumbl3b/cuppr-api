@@ -1,5 +1,4 @@
 const express = require('express');
-const app = require('../app');
 const RoutesService = require('./routes-service');
 
 const reviewsRouter = express.Router();
