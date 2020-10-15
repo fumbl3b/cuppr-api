@@ -7,6 +7,13 @@ const jsonBodyParser = express.json();
 
 commentsRouter
   .route('/')
+  .get((req, res, next) => {
+    RoutesService.getAllComments(req.app.get('db'))
+      .then(comment => {
+        res.json(comment);
+      })
+      .catch(next);
+  })  
   .post(jsonBodyParser, (req, res, next) => {
     const { author_id, review_id, body } = req.body;
     const newComment = { author_id, review_id, body };

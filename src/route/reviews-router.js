@@ -7,7 +7,7 @@ const jsonParser = express.json();
 reviewsRouter
   .route('/')
   .get((req, res, next) => {
-    RoutesService.getAllItems(req.app.get('db'),'coffee_review')
+    RoutesService.getAllReviewsRefactor(req.app.get('db'),'coffee_review')
       .then(reviews => {
         console.log(reviews);
         res.json(reviews);
