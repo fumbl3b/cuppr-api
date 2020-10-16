@@ -16,13 +16,18 @@ reviewsRouter
   })
   .post(jsonParser, (req, res, next) => {
     const { 
+      display_name,
+      roaster_name,
       coffee_name,
       coffee_origin, 
       process_method,
       body,
       author_id,
       roaster_id } = req.body;
-    const newReview = { coffee_name,
+    const newReview = { 
+      display_name,
+      roaster_name,
+      coffee_name,
       coffee_origin, 
       process_method,
       body,
