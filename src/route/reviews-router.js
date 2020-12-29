@@ -9,7 +9,6 @@ reviewsRouter
   .get((req, res, next) => {
     RoutesService.getAllReviewsRefactor(req.app.get('db'),'coffee_review')
       .then(reviews => {
-        console.log(reviews);
         res.json(reviews);
       })
       .catch(next);
@@ -46,7 +45,7 @@ reviewsRouter
       .then(review => {
         res
           .status(201)
-          .location(`/reviews/${review.id}`)
+          .location(`/Reviews/${review.id}`)
           .json(review);
       })
       .catch(next);
